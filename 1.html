@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Glossary</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background: #333;
+      color: white;
+    }
+
+    tr:hover {
+      background: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>HTML Digital Glossary</h2>
+
+  <!-- Search Bar -->
+  <input type="text" id="search" placeholder="Search HTML tags...">
+
+  <!-- Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>Tag</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+      <tr><td>&lt;b&gt;</td><td>Bold text</td></tr>
+      <tr><td>&lt;i&gt;</td><td>Italic text</td></tr>
+      <tr><td>&lt;u&gt;</td><td>Underline text</td></tr>
+      <tr><td>&lt;strong&gt;</td><td>Important text</td></tr>
+      <tr><td>&lt;em&gt;</td><td>Emphasized text</td></tr>
+      <tr><td>&lt;mark&gt;</td><td>Highlighted text</td></tr>
+      <tr><td>&lt;small&gt;</td><td>Smaller text</td></tr>
+      <tr><td>&lt;del&gt;</td><td>Deleted text</td></tr>
+      <tr><td>&lt;ins&gt;</td><td>Inserted text</td></tr>
+    </tbody>
+  </table>
+
+  <script>
+    const searchInput = document.getElementById("search");
+    const rows = document.querySelectorAll("#tableBody tr");
+
+    searchInput.addEventListener("input", function () {
+      const value = this.value.toLowerCase();
+
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(value) ? "" : "none";
+      });
+    });
+  </script>
+
+</body>
+</html>

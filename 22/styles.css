@@ -1,0 +1,39 @@
+.Header{
+    background: black;
+    text-align: center;
+    
+}
+.sidebar p:hover {
+            color: blue;
+            cursor: pointer;
+        }
+h1{
+    color: white;
+}
+.Container{
+    display: flex;
+}
+
+.Sidebar{
+    width: 25%;
+    background: lightgray;
+    padding: 15px;
+}
+
+ .footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            
+        }
+.Sidebar p:hover {
+            color: blue;
+            cursor: pointer;
+        }
+.Content{
+    margin: 10px;
+    padding: 20px;
+    width: 75%;
+    height: 100%;
+}
