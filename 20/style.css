@@ -35,7 +35,11 @@ button {
     color: white;
     border: none;
     border-radius: 5px;
+        margin-bottom: 10px;
+
+
 }
+
 
 /* Hover effect (extra marks) */
 button:hover {
@@ -56,3 +60,4 @@ button:hover {
 input[type="radio"] {
     width: auto;   /* VERY IMPORTANT */
 }
+

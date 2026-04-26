@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Dashboard</title>
+
+  <style>
+    .chart-box {
+      width: 400px;
+      height: 300px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+
+<h2 style="text-align:center;">Weather Dashboard</h2>
+
+<div class="chart-box">
+  <canvas id="lineChart"></canvas>
+</div>
+
+<div class="chart-box">
+  <canvas id="barChart"></canvas>
+</div>
+
+<div class="chart-box">
+  <canvas id="pieChart"></canvas>
+</div>
+
+<!-- OFFLINE -->
+<script src="node_modules/chart.js/dist/chart.umd.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
