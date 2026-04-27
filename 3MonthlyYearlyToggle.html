@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pricing Toggle</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .plan {
+      border: 1px solid black;
+      display: inline-block;
+      padding: 15px;
+      margin: 10px;
+      width: 150px;
+    }
+
+    button {
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Pricing Plans</h2>
+
+<button onclick="togglePrice()">Switch Plan</button>
+
+<div class="plan">
+  <h3>Basic</h3>
+  <p id="basic">₹500/month</p>
+</div>
+
+<div class="plan">
+  <h3>Pro</h3>
+  <p id="pro">₹1000/month</p>
+</div>
+
+<script>
+  let yearly = false;
+
+  function togglePrice() {
+    if (yearly == false) {
+      document.getElementById("basic").innerText = "₹5000/year";
+      document.getElementById("pro").innerText = "₹10000/year";
+      yearly = true;
+    } else {
+      document.getElementById("basic").innerText = "₹500/month";
+      document.getElementById("pro").innerText = "₹1000/month";
+      yearly = false;
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile Preview</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+      text-align: center;
+    }
+
+    input {
+      padding: 8px;
+      margin: 5px;
+      width: 200px;
+    }
+
+    .card {
+      border: 1px solid black;
+      padding: 15px;
+      width: 250px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Profile Preview</h2>
+
+<!-- Input Form -->
+<input type="text" id="name" placeholder="Enter Name" onkeyup="updateProfile()"><br>
+<input type="text" id="email" placeholder="Enter Email" onkeyup="updateProfile()"><br>
+
+<!-- Preview Card -->
+<div class="card">
+  <h3 id="pname">Your Name</h3>
+  <p id="pemail">Your Email</p>
+</div>
+
+<script>
+  function updateProfile() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+
+    document.getElementById("pname").innerText = name;
+    document.getElementById("pemail").innerText = email;
+  }
+</script>
+
+</body>
+</html>
+

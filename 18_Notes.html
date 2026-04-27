@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Notes App</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      padding: 20px;
+    }
+
+    input {
+      padding: 8px;
+      width: 200px;
+    }
+
+    button {
+      padding: 8px;
+      margin: 5px;
+    }
+
+    .note {
+      border: 1px solid #ccc;
+      margin: 10px auto;
+      padding: 10px;
+      width: 200px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Notes App</h2>
+
+<input type="text" id="noteInput" placeholder="Enter note">
+<button onclick="addNote()">Add</button>
+
+<div id="notes"></div>
+
+<script>
+  let notes = JSON.parse(localStorage.getItem("notes")) || [];
+
+  function displayNotes() {
+    let container = document.getElementById("notes");
+    container.innerHTML = "";
+
+    notes.forEach(function(note, index) {
+      let div = document.createElement("div");
+      div.className = "note";
+
+      div.innerHTML = `
+        ${note}
+        <br>
+        <button onclick="deleteNote(${index})">Delete</button>
+      `;
+
+      container.appendChild(div);
+    });
+  }
+
+  function addNote() {
+    let input = document.getElementById("noteInput").value;
+
+    if (input === "") return;
+
+    notes.push(input);
+    localStorage.setItem("notes", JSON.stringify(notes));
+
+    document.getElementById("noteInput").value = "";
+
+    displayNotes();
+  }
+
+  function deleteNote(index) {
+    notes.splice(index, 1);
+    localStorage.setItem("notes", JSON.stringify(notes));
+
+    displayNotes();
+  }
+
+  // Load notes on page start
+  displayNotes();
+</script>
+
+</body>
+</html>

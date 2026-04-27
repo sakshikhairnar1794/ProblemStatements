@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Navbar with Dropdown</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+    }
+
+    .navbar {
+      background: #333;
+      padding: 10px;
+    }
+
+    .navbar a {
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .dropdown {
+      display: inline-block;
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: #555;
+      min-width: 120px;
+    }
+
+    .dropdown-content a {
+      display: block;
+      color: white;
+    }
+
+    .dropdown-content a:hover {
+      background: #777;
+    }
+
+    /* Mobile button */
+    .menu-btn {
+      display: none;
+      background: #333;
+      color: white;
+      padding: 10px;
+      border: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .links {
+        display: none;
+        flex-direction: column;
+      }
+
+      .links a {
+        display: block;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Menu Button (Mobile) -->
+<button class="menu-btn" onclick="toggleMenu()">Menu</button>
+
+<div class="navbar">
+  <div class="links" id="navLinks">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+
+    <div class="dropdown">
+      <a href="#" onclick="toggleDropdown()">Services</a>
+      <div class="dropdown-content" id="dropdownMenu">
+        <a href="#">Web</a>
+        <a href="#">App</a>
+      </div>
+    </div>
+
+    <a href="#">Contact</a>
+  </div>
+</div>
+
+<script>
+  function toggleDropdown() {
+    let menu = document.getElementById("dropdownMenu");
+
+    if (menu.style.display === "block") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "block";
+    }
+  }
+
+  function toggleMenu() {
+    let links = document.getElementById("navLinks");
+
+    if (links.style.display === "flex") {
+      links.style.display = "none";
+    } else {
+      links.style.display = "flex";
+    }
+  }
+</script>
+
+</body>
+</html>

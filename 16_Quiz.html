@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz App</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+
+    .question {
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Quiz Application</h2>
+
+<form id="quiz">
+
+  <div class="question">
+    <p>1. What is HTML?</p>
+    <input type="radio" name="q1" value="a"> Programming Language<br>
+    <input type="radio" name="q1" value="b"> Markup Language<br>
+  </div>
+
+  <div class="question">
+    <p>2. What is CSS used for?</p>
+    <input type="radio" name="q2" value="a"> Styling<br>
+    <input type="radio" name="q2" value="b"> Database<br>
+  </div>
+
+  <div class="question">
+    <p>3. JavaScript is used for?</p>
+    <input type="radio" name="q3" value="a"> Interactivity<br>
+    <input type="radio" name="q3" value="b"> Hardware<br>
+  </div>
+
+</form>
+
+<button onclick="submitQuiz()">Submit</button>
+
+<h3 id="result"></h3>
+
+<script>
+  function submitQuiz() {
+    let score = 0;
+
+    let q1 = document.querySelector('input[name="q1"]:checked');
+    let q2 = document.querySelector('input[name="q2"]:checked');
+    let q3 = document.querySelector('input[name="q3"]:checked');
+
+    if (q1 && q1.value === "b") score++;
+    if (q2 && q2.value === "a") score++;
+    if (q3 && q3.value === "a") score++;
+
+    document.getElementById("result").innerText =
+      "Your Score: " + score + "/3";
+  }
+</script>
+
+</body>
+</html>

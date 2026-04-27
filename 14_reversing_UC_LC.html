@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>String Operations</title>
+</head>
+
+<body>
+
+<h2>String Operations</h2>
+
+<input type="text" id="input" placeholder="Enter text">
+<button onclick="process()">Process</button>
+
+<p id="result"></p>
+
+<script>
+  function process() {
+    let str = document.getElementById("input").value;
+
+    let reversed = str.split("").reverse().join("");
+    let upper = str.toUpperCase();
+    let lower = str.toLowerCase();
+    let length = str.length;
+
+    document.getElementById("result").innerHTML =
+      "Reversed: " + reversed + "<br>" +
+      "Uppercase: " + upper + "<br>" +
+      "Lowercase: " + lower + "<br>" +
+      "Length: " + length;
+  }
+</script>
+
+</body>
+</html>
